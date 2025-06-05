@@ -1,11 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../components/Layout.jsx";
+// import Header from "../components/Header.jsx";
+import Main from "../components/Main.jsx";
+import CVSection from "../components/CVSection.jsx";
+import ProjectsSection from "../components/ProjectsSection.jsx";
+import TechStackSection from "../components/TechStackSection.jsx";
+import Footer from "../components/Footer.jsx";
+import "../styles/global.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// AOS.init();
 ---
 
-<Layout>
-	<Welcome />
+<!-- <script>
+	import AOS from "aos";
+	import "aos/dist/aos.css";
+
+	if (typeof window !== "undefined") {
+		AOS.init({
+			duration: 800, // 動畫持續時間 (ms)
+			once: true, // 滾動一次後動畫不再重複
+		});
+	}
+</script> -->
+<Layout title="Jamie's Portfolio">
+	<div
+		
+		class="relative flex size-full min-h-screen flex-col bg-neutral-50 group/design-root overflow-x-hidden"
+	>
+		<div class="layout-container flex h-full grow flex-col">
+			<!-- <Header client:visible /> -->
+			<section id="home">
+				<Main client:load />
+			</section>
+
+			<section id="cv">
+				<TechStackSection client:visible />
+				<CVSection client:visible />
+			</section>
+
+			<section id="projects">
+				<ProjectsSection client:visible />
+			</section>
+
+			<section id="contact">
+				<Footer client:visible />
+			</section>
+		</div>
+	</div>
 </Layout>
