@@ -6,6 +6,8 @@ import CVSection from "../components/CVSection.jsx";
 import ProjectsSection from "../components/ProjectsSection.jsx";
 import TechStackSection from "../components/TechStackSection.jsx";
 import Footer from "../components/Footer.jsx";
+import CookieBanner from "../components/CookieBanner.jsx";
+
 import "../styles/global.css";
 ---
 
@@ -31,6 +33,7 @@ import "../styles/global.css";
 			<section id="contact">
 				<Footer client:visible />
 			</section>
+			<CookieBanner client:load />
 		</div>
 	</div>
 </Layout>

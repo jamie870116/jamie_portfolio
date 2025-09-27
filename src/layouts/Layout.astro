@@ -5,19 +5,40 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Jamie Lai</title>
 	</head>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZVK0TBBX"
-	></script>
 	<script is:inline>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
+		document.addEventListener("loadGA", (e) => {
+			try {
+				const id = e.detail || "{GA_ID}";
+				if (window.__gaLoaded) return;
+				window.__gaLoaded = true;
 
-		gtag("config", "G-B9ZVK0TBBX");
+				const s = document.createElement("script");
+				s.async = true;
+				s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+				document.head.appendChild(s);
+
+				s.addEventListener("load", function () {
+					window.dataLayer = window.dataLayer || [];
+					function gtag() {
+						window.dataLayer.push(arguments);
+					}
+					window.gtag = gtag;
+					gtag("js", new Date());
+					gtag("config", id);
+				});
+			} catch {}
+		});
+
+		try {
+			if (localStorage.getItem("cookie-consent") === "accepted") {
+				document.dispatchEvent(
+					new CustomEvent("loadGA", { detail: "{GA_ID}" }),
+				);
+			}
+		} catch {}
 	</script>
 	<body>
 		<slot />
