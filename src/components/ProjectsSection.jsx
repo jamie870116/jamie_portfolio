@@ -5,7 +5,7 @@ export default function ProjectsSection() {
         {
             title: 'Multi-Agent Robotic Systems with LLM-Driven Coordination',
             subtitle: 'Feb 2025 - Present',
-            description: 'mplemented orchestration pipelines for multi-robot coordination in AI2-THOR, integrating OpenAI GPT APIs for task planning, allocation, and adaptive replanning.',
+            description: 'Implemented orchestration pipelines for multi-robot coordination in AI2-THOR, integrating OpenAI GPT APIs for task planning, allocation, and adaptive replanning.',
             github: 'https://github.com/jamie870116/mas',
             image: '/assets/workflow.png',
             skills: ['Python', 'LLM', 'Prompt Engineering', 'Robotics'],

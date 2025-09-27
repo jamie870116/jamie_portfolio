@@ -6,19 +6,20 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Jamie Lai</title>
-	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZVK0TBBX"
-	></script>
-	<script is:inline>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-B9ZVK0TBBX"
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-		gtag("config", "G-B9ZVK0TBBX");
-	</script>
+			gtag("config", "G-B9ZVK0TBBX");
+		</script>
+	</head>
 
 	<body>
 		<slot />

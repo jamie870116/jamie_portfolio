@@ -20,14 +20,14 @@ export default function CVSection() {
             type: "work",
             title: "Research Assistant",
             subtitle: "National Chung Hsing University / Occupational Safety and Health Admin., MOL",
-            duration: "Feb 2021 – Jun 2022",
+            duration: "Feb 2021 - Jun 2022",
             location: "Taichung, Taiwan",
         },
         {
             type: "work",
             title: "Research Assistant",
             subtitle: "Taiwan Semiconductor Manufacturing Co., Ltd",
-            duration: "Aug 2021 – Dec 2021",
+            duration: "Aug 2021 - Dec 2021",
             location: "Taichung, Taiwan",
         },
         {
@@ -41,14 +41,14 @@ export default function CVSection() {
             type: "work",
             title: "Software Engineer",
             subtitle: "ShangDa Plastic Inc.",
-            duration: "Jun 2020 – Feb 2021",
+            duration: "Jun 2020 - Feb 2021",
             location: "Miao-li, Taiwan",
         },
         {
             type: "work",
             title: "Full Stack Developer",
             subtitle: "Wanin International",
-            duration: "Mar 2020 – Dec 2020",
+            duration: "Mar 2020 - Dec 2020",
             location: "Taichung, Taiwan",
         },
         {
