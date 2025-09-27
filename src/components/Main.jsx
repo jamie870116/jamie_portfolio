@@ -110,7 +110,7 @@ export default function Example() {
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-neutral">
                                 I code.<br />
-                                Software Engineer & Machine Learning Engineer | Seeking New Grad & Internship Opportunities | <br /> Computer Science Graduate Student
+                                Software Engineer & Machine Learning Engineer | Seeking New Grad Opportunities | <br /> Computer Science Graduate Student
                             </p>
                         </div>
                         <div className="flex justify-center px-4 sm:px-6">

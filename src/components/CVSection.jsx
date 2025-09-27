@@ -3,6 +3,13 @@ import React from 'react';
 export default function CVSection() {
     const timelineItems = [
         {
+            type: "work",
+            title: "Software Engineer Intern",
+            subtitle: "Topia Holdings, Inc.",
+            duration: "Aug 2025 - Present",
+            location: "Burlington, North Carolina",
+        },
+        {
             type: "education",
             title: "M.S. in Computer Science",
             subtitle: "University of California, Santa Barbara",

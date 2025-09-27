@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiJavascript, SiCplusplus, SiSwift, SiDjango, SiPytorch } from 'react-icons/si';
+import { SiJavascript, SiCplusplus, SiSwift, SiDjango, SiPytorch, SiTypescript } from 'react-icons/si';
 import { FaPython, FaReact, FaAws, FaLinux, FaGit } from 'react-icons/fa';
 
 export default function TechStackSection() {
@@ -11,11 +11,17 @@ export default function TechStackSection() {
                     <div className="tech-category">
                         <h4 className="text-lg font-semibold leading-tight pb-3 text-center text-base-content">Programming Languages</h4>
                         <div className="tech-icons flex flex-wrap gap-3 items-center justify-center">
+                            <SiTypescript
+                            title="TypeScript"
+                            className="h-8 w-8 text-[#3178c6] hover:scale-110 transition-transform duration-200"
+                            aria-label="TypeScript"
+                            />
                             <SiJavascript
                                 title="JavaScript"
                                 className="h-8 w-8 text-[#f7df1e] hover:scale-110 transition-transform duration-200"
                                 aria-label="JavaScript"
                             />
+
                             <FaPython
                                 title="Python"
                                 className="h-8 w-8 text-[#3776ab] hover:scale-110 transition-transform duration-200"
