@@ -9,10 +9,11 @@
 	</head>
 	<!-- Google tag (gtag.js) -->
 	<script is:inline>
+		// 監聽 CookieBanner 的事件，動態載入 GA
 		document.addEventListener("loadGA", (e) => {
 			try {
-				const id = e.detail || "{GA_ID}";
-				if (window.__gaLoaded) return;
+				const id = e.detail || "G-B9ZVK0TBBX"; // 你的 GA4 ID
+				if (window.__gaLoaded) return; // 防止重複載入
 				window.__gaLoaded = true;
 
 				const s = document.createElement("script");
@@ -29,16 +30,21 @@
 					gtag("js", new Date());
 					gtag("config", id);
 				});
-			} catch {}
+			} catch (err) {
+				console.error("GA load failed", err);
+			}
 		});
 
+		// 若使用者之前已同意，回訪時自動載入
 		try {
 			if (localStorage.getItem("cookie-consent") === "accepted") {
 				document.dispatchEvent(
-					new CustomEvent("loadGA", { detail: "{GA_ID}" }),
+					new CustomEvent("loadGA", { detail: "G-B9ZVK0TBBX" }),
 				);
 			}
-		} catch {}
+		} catch (err) {
+			console.error("Consent check failed", err);
+		}
 	</script>
 	<body>
 		<slot />
