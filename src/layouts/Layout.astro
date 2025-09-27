@@ -6,46 +6,44 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Jamie Lai</title>
-	</head>
-	<!-- Google tag (gtag.js) -->
-	<script is:inline>
-		// 監聽 CookieBanner 的事件，動態載入 GA
-		document.addEventListener("loadGA", (e) => {
+		<script is:inline>
+			document.addEventListener("loadGA", (e) => {
+				try {
+					const id = e.detail || "G-B9ZVK0TBBX";
+					if (window.__gaLoaded) return;
+					window.__gaLoaded = true;
+
+					const s = document.createElement("script");
+					s.async = true;
+					s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+					document.head.appendChild(s);
+
+					s.addEventListener("load", function () {
+						window.dataLayer = window.dataLayer || [];
+						function gtag() {
+							window.dataLayer.push(arguments);
+						}
+						window.gtag = gtag;
+						gtag("js", new Date());
+						gtag("config", id);
+					});
+				} catch (err) {
+					console.error("GA load failed", err);
+				}
+			});
+
 			try {
-				const id = e.detail || "G-B9ZVK0TBBX"; // 你的 GA4 ID
-				if (window.__gaLoaded) return; // 防止重複載入
-				window.__gaLoaded = true;
-
-				const s = document.createElement("script");
-				s.async = true;
-				s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
-				document.head.appendChild(s);
-
-				s.addEventListener("load", function () {
-					window.dataLayer = window.dataLayer || [];
-					function gtag() {
-						window.dataLayer.push(arguments);
-					}
-					window.gtag = gtag;
-					gtag("js", new Date());
-					gtag("config", id);
-				});
+				if (localStorage.getItem("cookie-consent") === "accepted") {
+					document.dispatchEvent(
+						new CustomEvent("loadGA", { detail: "G-B9ZVK0TBBX" }),
+					);
+				}
 			} catch (err) {
-				console.error("GA load failed", err);
+				console.error("Consent check failed", err);
 			}
-		});
+		</script>
+	</head>
 
-		// 若使用者之前已同意，回訪時自動載入
-		try {
-			if (localStorage.getItem("cookie-consent") === "accepted") {
-				document.dispatchEvent(
-					new CustomEvent("loadGA", { detail: "G-B9ZVK0TBBX" }),
-				);
-			}
-		} catch (err) {
-			console.error("Consent check failed", err);
-		}
-	</script>
 	<body>
 		<slot />
 	</body>
