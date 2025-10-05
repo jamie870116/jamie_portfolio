@@ -37,10 +37,10 @@ export default function ProjectsSection() {
         {
             title: 'Manufacturing Information Management System',
             subtitle: 'Jun 2020 - Feb 2021',
-            description: `Developed a system to manage customer info, procurement, and inventory, increasing data input efficiency by 50% and eliminating human errors. Built with PHP Laravel (backend), MySQL, and Vue.js (frontend).`,
+            description: `Developed a system to manage customer info, procurement, and inventory, increasing data input efficiency by 50% and eliminating human errors. Built with Python Django (backend), MySQL, and Vue.js (frontend).`,
             image: '/assets/Shangda.jpg',
             github: 'https://www.shangda.com.tw/',
-            skills: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Vue.js', 'Nginx'],
+            skills: ['Python', 'Django', 'MySQL', 'JavaScript', 'Vue.js', 'AWS','Nginx'],
         },
     ];
 

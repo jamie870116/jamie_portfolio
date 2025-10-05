@@ -117,6 +117,7 @@ export default function Example() {
                             <img
                                 src='/assets/myphoto.jpeg'
                                 alt="Jamie"
+                                loading='lazy'
                                 className="rounded-lg aspect-square w-full max-w-[300px] object-cover shadow-lg transition-transform duration-300 hover:scale-105 hover:brightness-110"
                             />
                         </div>
